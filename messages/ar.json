@@ -1,0 +1,34 @@
+{
+  "HomePage": {
+    "title": "Arabic: Hello world!",
+    "about": "Arabic: Go to the about page"
+  },
+  "AboutPage": {
+    "title": "Arabic: Hello world!",
+    "about": "Arabic: Go to the about page"
+  },
+  "ServicesPage": {
+    "title": "Arabic: Hello world!",
+    "about": "Arabic: Go to the about page"
+  },
+  "ContactPage": {
+    "title": "Arabic: Hello world!",
+    "about": "Arabic: Go to the about page"
+  },
+  "NewsPage": {
+    "title": "Arabic: Hello world!",
+    "about": "Arabic: Go to the about page"
+  },
+  "Navigation": {
+    "home": "Ar: Home",
+    "about": "Ar: About",
+    "services": "Ar: Services",
+    "news": "Ar: News",
+    "contact": "Ar: Contact"
+  },
+  "NotFoundPage": {
+    "title": "الصفحة غير موجودة",
+    "message": "الصفحة التي تبحث عنها غير موجودة.",
+    "goHome": "العودة إلى الصفحة الرئيسية"
+  }
+}
