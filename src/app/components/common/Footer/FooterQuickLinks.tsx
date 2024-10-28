@@ -9,7 +9,8 @@ type PageMenusTypes = {
 }
 
 function FooterQuickLinks(): React.ReactElement {
-  const blockHeading: string =  'Discover'
+  const blockHeading: string = 'Discover'
+  // @typescript-eslint/no-unused-vars
   const [pageMenus, setPageMenus] = useState<PageMenusTypes[]>([
     { label: "Home", href: "/" as Pathnames },
     { label: "About us ", href: "" as Pathnames },

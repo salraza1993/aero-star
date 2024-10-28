@@ -9,6 +9,7 @@ type copyWriteListType = {
 
 function FooterCopyrights() {
   const currentYear = new Date().getFullYear();
+  // @typescript-eslint/no-unused-vars
   const [copyWriteList, setCopyWriteList] = useState<copyWriteListType[]>([
     { label: 'Terms & Conditions', path: '/terms-conditions' as Pathnames },
     { label: 'Privacy Policies', path: '/privacy-policies' as Pathnames },

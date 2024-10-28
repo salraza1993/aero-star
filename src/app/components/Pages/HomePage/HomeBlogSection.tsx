@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Button from "../../common/Button";
 import BlogCard, { BlogCardContentTypes } from "./BlogCard";
 import "@/app/assets/scss/Pages/HomePage/HomeBlog.scss";

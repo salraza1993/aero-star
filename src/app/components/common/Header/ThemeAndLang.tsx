@@ -1,6 +1,4 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
-import LocalLanguageSwitcher from './LocalLanguageSwitcher';
 import ThemeChanger from './ThemeChanger';
 
 function ThemeAndLang(): React.ReactElement {

@@ -1,6 +1,6 @@
 'use client'
 import { useLocale } from 'next-intl';
-import React, { createContext, ReactNode, RefObject, useContext, useEffect, useRef, useState } from 'react'
+import React, { createContext, ReactNode, useContext, useEffect, useRef, useState } from 'react'
 
 interface LanguageDirectionType {
   currentLanguage: string;

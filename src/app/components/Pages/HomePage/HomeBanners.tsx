@@ -24,6 +24,7 @@ type SliderBannersType = {
 function HomeBanners(): React.ReactElement<SliderBannersType> {
   const { currentDirection } = useLanguageDirection();
   const imageUrl: string = '/images/slider-banner-1.jpg';
+  // @typescript-eslint/no-unused-vars
   const [sliderBanners, setSliderBanners] = useState<SliderBannersType[]>([
     {
       title: 'Your Comprehensive Aviation Services Partner',

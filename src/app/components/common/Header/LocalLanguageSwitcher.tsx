@@ -11,6 +11,7 @@ import { useLanguageDirection } from '@/app/utils/Contexts/LanguageDirectionCont
 function LocalLanguageSwitcher(): React.ReactElement {
   const { currentLanguage } = useLanguageDirection();
   const router = useRouter();
+  // @typescript-eslint/no-unused-vars
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
   const params = useParams();

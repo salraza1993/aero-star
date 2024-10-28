@@ -4,9 +4,11 @@ import { routing } from './routing';
 
 export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid
+  // @typescript-eslint/no-explicit-any
   if (!routing.locales.includes(locale as any)) notFound();
-
+  
   return {
+    // @typescript-eslint/no-explicit-any
     messages: (await import(`../../messages/${locale}.json`)).default
   };
 });

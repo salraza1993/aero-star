@@ -1,6 +1,5 @@
 "use client";
 import { useState, ChangeEvent, FormEvent, FocusEvent } from "react";
-import Button from "../common/Button";
 
 interface FormData {
   name: string;

@@ -1,5 +1,3 @@
-import SubPageHeroBanner from "@/app/components/common/SubPageHeroBanner";
-import BlogCard, { BlogCardContentTypes } from "@/app/components/Pages/HomePage/BlogCard";
 import "@/app/assets/scss/Pages/BlogPage/BlogPage.scss";
 import Image from "next/image";
 import RelatedArticles from "./RelatedArticles";

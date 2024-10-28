@@ -11,7 +11,7 @@ type Props = {
   params: {locale: string};
 };
 function AboutPage({params: {locale}}: Props): React.ReactElement {
-  const translate = useTranslations('AboutPage');
+  // const translate = useTranslations('AboutPage');
   unstable_setRequestLocale(locale);
   const aboutBannerPath = '/images/sub-banner-image.jpg';
   return <>

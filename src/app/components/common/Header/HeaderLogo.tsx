@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 function HeaderLogo(): React.ReactElement {
   const logoLight:string = '/images/logo-light.svg';
-  const logoDark:string = '/images/logo-dark.svg';
+  // const logoDark:string = '/images/logo-dark.svg';
   const logoColor:string = '/images/logo-color.svg';
   const { currentMode } = useThemeChanger();
   const [clientLogo, setClientLogo] = useState<string>(logoColor);
