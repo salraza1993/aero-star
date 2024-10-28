@@ -2,6 +2,7 @@
 import { useState } from "react"
 import Button from "../../common/Button";
 import { Pathnames } from "@/i18n/routing";
+import Image from "next/image";
 
 export type cardProps = {
   image: string,
@@ -83,8 +84,8 @@ export default function AboutServiceSection(): React.ReactElement {
                 <div className="heading">
                   <h5 className="title">{card.title}</h5>
                 </div>
-                <div className="__image">
-                  <img src={card.image} alt={card.imageAlt} />
+                <div className="__image"> 
+                  <Image src={card.image} alt={card.imageAlt} fill priority />
                 </div>
                 <div className="__content-wrapper">
                   <div className="__content">

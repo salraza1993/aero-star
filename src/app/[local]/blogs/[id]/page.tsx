@@ -32,7 +32,7 @@ export default function BlogDetails() {
           <Image src={blogInnerImage1} alt="Test" width={370} height={220} />
           <Image src={blogInnerImage2} alt="Test" width={370} height={220} />
           <blockquote>
-            "The Morane-Saulnier MS.760 Paris is a testament to the power of small, lightweight aircraft. It's a great example of how a private company can make a small, innovative design work, and sell it to the military."
+            &quot;The Morane-Saulnier MS.760 Paris is a testament to the power of small, lightweight aircraft. It a great example of how a private company can make a small, innovative design work, and sell it to the military.&quot;
             <br />
             <span>- John Doe, CEO of AeroStar Aviation</span>
           </blockquote>

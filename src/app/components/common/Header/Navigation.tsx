@@ -33,19 +33,20 @@ function Navigation(): React.ReactElement {
   ]);
 
   useEffect(() => {
-    const updatedMenus = menus.map(menu => {
-      if (menu.hasChildren && menu.children) {
-        const updatedChildren = menu.children.map(child => ({
-          ...child,
-          isActive: pathname === child.path,
-        }));
-        return { ...menu, children: updatedChildren, isActive: pathname === menu.path };
-      }
-      return { ...menu, isActive: pathname === menu.path };
-    });
-    
-    setMenus(updatedMenus);
+    setMenus((prevMenus) => 
+      prevMenus.map(menu => {
+        if (menu.hasChildren && menu.children) {
+          const updatedChildren = menu.children.map(child => ({
+            ...child,
+            isActive: pathname === child.path,
+          }));
+          return { ...menu, children: updatedChildren, isActive: pathname === menu.path };
+        }
+        return { ...menu, isActive: pathname === menu.path };
+      })
+    );
   }, [pathname]);
+
 
   return (
     <nav className='navigation'>

@@ -2,13 +2,14 @@ import { notFound } from 'next/navigation';
 import { getRequestConfig } from 'next-intl/server';
 import { routing } from './routing';
 
-export default getRequestConfig(async ({ locale }) => {
-  // Validate that the incoming `locale` parameter is valid
-  // @typescript-eslint/no-explicit-any
-  if (!routing.locales.includes(locale as any)) notFound();
-  
+// Define the valid locales as a union type
+type Locale = 'en' | 'ar';
+
+export default getRequestConfig(async ({ locale }: { locale: string }) => {
+  // Validate that the incoming `locale` parameter is a valid Locale
+  if (!routing.locales.includes(locale as Locale)) notFound();
+
   return {
-    // @typescript-eslint/no-explicit-any
     messages: (await import(`../../messages/${locale}.json`)).default
   };
 });

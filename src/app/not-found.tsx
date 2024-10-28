@@ -2,14 +2,13 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 export default function notFound() {
-  // const t = useTranslations('NotFoundPage');
+  // const translate = useTranslations('NotFoundPage');
   return (
     <html>
       <body>
-        'Hello'
-        {/* <h1>{t('title')}</h1>
-        <p>{t('message')}</p>
-        <Link href="/">{t('goHome')}</Link> */}
+        <h1>Note Found</h1>
+        <p>Message Text</p>
+        <Link href="/">Go Back</Link>
       </body>
     </html>
   );

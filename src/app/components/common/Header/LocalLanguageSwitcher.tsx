@@ -11,13 +11,14 @@ import { useLanguageDirection } from '@/app/utils/Contexts/LanguageDirectionCont
 function LocalLanguageSwitcher(): React.ReactElement {
   const { currentLanguage } = useLanguageDirection();
   const router = useRouter();
-  // @typescript-eslint/no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
   const params = useParams();
   
   const [isOpen, setIsOpen] = useState(false);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [listMenu, setListMenu] = useState<ListMenuInterface[]>([
     { type: 'en', label: "English", icon: 'language', selected: true },
     { type: 'ar', label: "عربي", icon: 'language', selected: false },
@@ -42,8 +43,13 @@ function LocalLanguageSwitcher(): React.ReactElement {
   useClickOutside(elementRef, () => setIsOpen(false));
 
   useEffect(() => {
-    setListMenu(listMenu.map((menu: ListMenuInterface) => ({ ...menu, selected: menu.type === currentLanguage })));
-  }, [currentLanguage])
+    setListMenu((prevListMenu) =>
+      prevListMenu.map((menu: ListMenuInterface) => ({
+        ...menu,
+        selected: menu.type === currentLanguage,
+      }))
+    );
+  }, [currentLanguage]);
   
   return (
     <li className={isOpen ? "theme-n-lang__list active" : "theme-n-lang__list"} ref={elementRef}>
