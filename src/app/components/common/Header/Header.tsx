@@ -1,4 +1,4 @@
-import '@/app/assets/scss/components/Header.scss';
+// import '@/app/assets/scss/components/Header.scss';
 import HeaderLogo from './HeaderLogo';
 import Navigation from './Navigation';
 import ThemeAndLang from './ThemeAndLang';

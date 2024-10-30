@@ -8,15 +8,15 @@
     "about": "Go to the about page"
   },
   "ServicesPage": {
-    "title": "Hello world!",
+    "title": "Service Page world!",
     "about": "Go to the about page"
   },
   "ContactPage": {
-    "title": "Hello world!",
+    "title": "Contact world!",
     "about": "Go to the about page"
   },
   "NewsPage": {
-    "title": "Hello world!",
+    "title": "Blog world!",
     "about": "Go to the about page"
   },
   "Navigation": {
@@ -27,8 +27,11 @@
     "contact": "Contact"
   },
   "NotFoundPage": {
-    "title": "Page Not Found",
-    "message": "The page you are looking for does not exist.",
+    "title": "English: Page Not Found",
+    "message": "English: The page you are looking for does not exist.",
     "goHome": "Go back to Home"
+  },
+  "Manifest": {
+    "name": "next-intl example"
   }
 }

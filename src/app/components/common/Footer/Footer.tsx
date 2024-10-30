@@ -1,4 +1,4 @@
-import "@/app/assets/scss/components/Footer.scss";
+// import "@/app/assets/scss/components/Footer.scss";
 import FooterContent from "./FooterContent";
 import FooterQuickLinks from "./FooterQuickLinks";
 import FooterNewsletter from "./FooterNewsletter";

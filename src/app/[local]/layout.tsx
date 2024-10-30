@@ -1,19 +1,9 @@
-import '/node_modules/@fortawesome/fontawesome-free/css/all.css';
-import '/node_modules/@awesome.me/kit-26a319aa6f/icons/css/all.min.css';
-import '/node_modules/bootstrap/dist/css/bootstrap.min.css';
-import "@/app/assets/scss/globals.scss"
-
 import type { Metadata } from "next";
-import {NextIntlClientProvider} from 'next-intl';
-import {getMessages, unstable_setRequestLocale} from 'next-intl/server';
-
-
-import Footer from '@/app/components/common/Footer/Footer';
-import { Kanit, Roboto, Open_Sans, Merriweather, Cairo, Amiri } from "@/app/fonts/Fonts";
-import Header from "@/app/components/common/Header/Header";
-import { routing } from "@/i18n/routing";
+import { Locale, routing } from "@/i18n/routing";
 import { ReactNode } from "react";
-import { LanguageDirectionContextProvider } from '../utils/Contexts/LanguageDirectionContext';
+import BaseLayout from '../components/BaseLayout';
+import { notFound } from 'next/navigation';
+import { setRequestLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "AeroStar Aviation",
@@ -21,38 +11,22 @@ export const metadata: Metadata = {
 };
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({locale}));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 type Props = {
   children: ReactNode;
-  params: {locale: string};
+  params: {locale: Locale};
 };
 
 
-export default async function LocaleLayout({ children, params: { locale }}: Readonly<Props>) {
-  const bodyFonts = [
-    'main-body',
-    Kanit.variable,
-    Roboto.variable,
-    Open_Sans.variable,
-    Cairo.variable,
-    Amiri.variable,
-    Merriweather.variable
-  ].join(' ');
-  unstable_setRequestLocale(locale);
-  const messages = await getMessages();
-  return (
-    <html lang={locale}>
-      <body className={bodyFonts}>
-        <NextIntlClientProvider messages={messages}>
-          <LanguageDirectionContextProvider>
-            <Header />
-            { children }
-            <Footer />
-          </LanguageDirectionContextProvider>
-        </NextIntlClientProvider>
-      </body>
-    </html>
-  );
+export default async function LocaleLayout({ children, params: { locale } }: Props) {
+ const validLocale = routing.locales.includes(locale as Locale) ? locale : routing.defaultLocale;
+
+  if (!validLocale) {
+    notFound();
+  }
+  // Enable static rendering
+  setRequestLocale(validLocale);
+  return <BaseLayout locale={validLocale}>{children}</BaseLayout>;
 }

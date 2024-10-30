@@ -2,8 +2,14 @@ import SubPageHeroBanner from '@/app/components/common/SubPageHeroBanner'
 import BlogCard, { BlogCardContentTypes } from '@/app/components/Pages/HomePage/BlogCard';
 import "@/app/assets/scss/Pages/BlogPage/BlogPage.scss";
 import HomeClients from '@/app/components/Pages/HomePage/HomeClients';
+import { setRequestLocale } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
+import { Props } from '../page';
 
-function BlogPage(): React.ReactElement {
+export default function BlogPage({ params: { locale } }: Props): React.ReactElement {
+  const translate = useTranslations('NewsPage');
+  // Enable static rendering
+  setRequestLocale(locale);
   const blogCardData: BlogCardContentTypes[] = [
     {
       title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, ',
@@ -87,7 +93,10 @@ function BlogPage(): React.ReactElement {
       path: '/blogs/blog-1',
     },
   ];
+
   return <>
+    <h1>{translate('title')}</h1>
+    
     <SubPageHeroBanner title='Blogs' />
     <section className="blog-listing-section">
       <div className="container">
@@ -120,5 +129,4 @@ function BlogPage(): React.ReactElement {
     <HomeClients />
   </>
 }
-
-export default BlogPage
+export const dynamicParams = true; // Enables dynamic params for static rendering

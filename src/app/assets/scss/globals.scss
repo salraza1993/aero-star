@@ -6,6 +6,8 @@
 @import './bootstrap-override';
 @import './classes';
 @import './grid';
+@import './components/Header.scss';
+@import './components/Footer.scss';
 
 :root[dir="rtl"] {
   [class$='-right'] {
@@ -146,5 +148,19 @@ small {
     &::placeholder {
       color: rgba(var(--body-color-rgb), 0.6);
     }
+  }
+}
+
+.not-found-page-section {
+  position: relative;
+  width: 100%;
+  .not-found-page-content {
+    position: relative;
+    min-height: 50vh;
+    min-height: 50dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

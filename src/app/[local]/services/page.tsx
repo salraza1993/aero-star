@@ -5,9 +5,17 @@ import CounterBlock from '@/app/components/Pages/ServicesPage/CounterBlock';
 import HomeBlogSection from '@/app/components/Pages/HomePage/HomeBlogSection';
 import HomeClients from '@/app/components/Pages/HomePage/HomeClients';
 import ContactForm from '@/app/components/Pages/ContactForm';
+import { setRequestLocale } from 'next-intl/server';
+import { Props } from '../page';
+import { useTranslations } from 'next-intl';
 
-function ServicesPage() : React.ReactElement {
+export default function ServicesPage({ params: { locale } }: Props): React.ReactElement {
+  const translate = useTranslations('ServicesPage');
+  // Enable static rendering
+  setRequestLocale(locale);
   return <>
+    <h1>{translate('title')}</h1>
+    
     <SubPageHeroBanner title='Our Services' />
     <ServicesCardBlock />
     <CounterBlock />
@@ -31,5 +39,4 @@ function ServicesPage() : React.ReactElement {
     <HomeClients />
   </> 
 }
-
-export default ServicesPage
+export const dynamicParams = true; // Enables dynamic params for static rendering

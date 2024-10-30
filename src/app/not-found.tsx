@@ -1,15 +1,18 @@
-import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import {routing} from '@/i18n/routing';
+import BaseLayout from './components/BaseLayout';
+import NotFoundPage from './components/NotFoundPage';
 
-export default function notFound() {
-  // const translate = useTranslations('NotFoundPage');
+import '@/app/assets/scss/globals.scss';
+
+// This page renders when a route like `/unknown.txt` is requested.
+// In this case, the layout at `app/[locale]/layout.tsx` receives
+// an invalid value as the `[locale]` param and calls `notFound()`.
+
+export default function GlobalNotFound() {
   return (
-    <html>
-      <body>
-        <h1>Note Found</h1>
-        <p>Message Text</p>
-        <Link href="/">Go Back</Link>
-      </body>
-    </html>
+    <div>
+      <h1>404 - Page Not Found</h1>
+      <p>Sorry, the page you are looking for does not exist.</p>
+    </div>
   );
 }
